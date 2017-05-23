@@ -1,3 +1,35 @@
+function(x_init, y_init, x_fin, y_fin, func, isoval, scale, grid_size, context, context_height) {
+    this.x_init = x_init;
+    this.y_init = y_init;
+    this.x_fin = x_fin;
+    this.y_fin = y_fin;
+    this.func = func;
+    this.isoval = isoval;
+    this.scale = scale;
+    this.grid_size = grid_size;
+    this.context = context;
+    this.context_height = context_height;
+    
+    this.bitmap = function(){
+        var parse = math.parser();
+        parse.eval(this.func);
+        this.x = this.x_init;
+        this.y = this.y_init;
+        var expression;
+        var evaluated_expr;
+        var i = 0;
+        this.positions = [];
+        
+        while(x < this.x_fin) {
+            y = this.y_init;
+            
+            while(y < this.y_fin) {
+                expression = "f(" + x + 
+            }
+        }
+    }
+}
+
 function onClick() 
 {
 
