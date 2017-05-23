@@ -1,0 +1,24 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <script type="text/javascript" src="math.js"></script>
+        <script type="text/javascript" src="marchingsquares.js"></script>
+    </head>
+    <body>
+        <form>
+            Function:<input type = "text" name="func" id="func"></input>
+            Iso Value:<input type = "text" name="isoval" id="isoval"></input>
+        </form>
+        <button onclick = "onClick()">Graph</button>
+        <button onclick = "onClick2()">Clear</button>
+        <div id = "canvas_container">
+            <canvas id = "canvas" height = "600px" width = "1000px" style="border:1px solid #000000;"></canvas>
+        </div>
+        <div>
+            <p>Created with the math.js library</p>
+            <br>
+            <p> Copyright (C) 2013-2017 Jos de Jong wjosdejong@gmail.com</p>
+        </div>
+    </body>
+</html>
