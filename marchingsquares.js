@@ -13,8 +13,8 @@ function(x_init, y_init, x_fin, y_fin, func, isoval, scale, grid_size, context, 
     this.bitmap = function(){
         var parse = math.parser();
         parse.eval(this.func);
-        this.x = this.x_init;
-        this.y = this.y_init;
+        var x = this.x_init;
+        var y = this.y_init;
         var expression;
         var evaluated_expr;
         var i = 0;
@@ -23,9 +23,27 @@ function(x_init, y_init, x_fin, y_fin, func, isoval, scale, grid_size, context, 
         while(x < this.x_fin) {
             y = this.y_init;
             
-            while(y < this.y_fin) {
-                expression = "f(" + x + 
+            while(y < this.y_fin) 
+            {
+            expression = "f(" + x + "," + y + ")";
+            evaluated_expr = parse.eval(expression);
+            if(evaluated_expr < this.isoval)
+            {
+                positions[i] = [x, y, 0];
             }
+            else if (evaluated_expr > this.isoval)
+            {
+                positions[i] = [x, y, 1];
+            }
+            else if (evaluated_expr == this.isoval)
+            {
+                positions[i] = [x, y, 1];
+            }
+            y = y + this.scale;
+            i++;
+            }
+            
+            x = x + this.scale;
         }
     }
 }
