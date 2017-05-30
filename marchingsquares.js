@@ -216,7 +216,7 @@ var scale = .125;
 var grid_size = 50;
 var context_height = 600;
 var form = document.forms[0];
-var func = form.elements["func"].value;
+var func = "f(x,y) = " + form.elements["func"].value;
 var isoval = form.elements["isoval"].value;
 //console.log(func);
 var bitmap = bitmap(scale, x_init, y_init, x_fin, y_fin, func, isoval);
